@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""LRU Cache Module
+
+The LRUCache class implements the Least Recently Used (LRU) eviction policy,
+discarding the least recently accessed item when the cache is full.
+
+"""
 from base_caching import BaseCaching
 
 
