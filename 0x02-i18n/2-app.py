@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 """
-Basic Flask app with BabelEx for internationalization.
-
 This app serves a simple HTML page with "Welcome to Holberton" as the page
 title and "Hello world" as the header. It supports internationalization with
 English and French languages.
@@ -9,6 +7,10 @@ English and French languages.
 
 from flask import Flask, render_template, request
 from flask_babel import Babel
+
+
+app = Flask(__name__)
+babel = Babel(app)
 
 
 class Config:
@@ -19,11 +21,7 @@ class Config:
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
 
-
-app = Flask(__name__)
 app.config.from_object(Config)
-
-babel = Babel(app)
 
 
 @babel.localeselector
